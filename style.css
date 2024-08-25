@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: maroon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.conteiner {
+  background-color: blueviolet;
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.play-board {
+  height: 100%;
+  width: 100%;
+  background-color: chartreuse;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+.controls {
+  display: none;
+}
+.controls i {
+  padding: 25px 0;
+  width: calc(100% / 4);
+  font-size: 22px;
+  text-align: center;
+  border-right: 1px solid #171b26;
+  cursor: pointer;
+}
+.game {
+  font-size: 30px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.head {
+  /* background-color: rgb(255, 0, 0); */
+  /* border: 1px solid red;
+  box-shadow: 0 0 10px red inset; */
+}
+.food {
+  /* background-color: blue;c */
+  /* color: blue; */
+  font-size: 12px;
+}
+@media screen and (max-width: 800px) {
+  .controls {
+    display: flex;
+  }
+  .conteiner {
+    width: 90vmin;
+    height: 115vmin;
+  }
+}
