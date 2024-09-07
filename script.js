@@ -1,6 +1,7 @@
 const playboard = document.querySelector(".play-board");
 const scoreEl = document.querySelector(".score");
 const recordEl = document.querySelector(".record");
+const controls = document.querySelectorAll(".controls i");
 let snakeX = 5;
 let snakeY = 5;
 let velocityX = 0;
@@ -23,6 +24,7 @@ const getRandomColor = () => {
   }
   return color;
 };
+
 const handleGameover = () => {
   clearInterval(setIntervalId);
   alert("game over");
@@ -43,6 +45,11 @@ const changeDirections = (event) => {
     velocityY = 1;
   }
 };
+controls.forEach((button) =>
+  button.addEventListener("click", () =>
+    changeDirections({ key: button.dataset.key })
+  )
+);
 const foodPosition = () => {
   foodX = Math.floor(Math.random() * 30) + 1;
   foodY = Math.floor(Math.random() * 30) + 1;
